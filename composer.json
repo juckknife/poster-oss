@@ -1,0 +1,30 @@
+{
+  "name": "juckknife/poster-oss",
+  "description": "poster util for oss",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "juckknife",
+      "email": "juckknife@163.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "juckknife\\PosterOss\\": "./src/"
+    }
+  },
+  "require": {
+    "php": ">=7.0",
+    "illuminate/container": "^5.1",
+    "illuminate/support": "5.6.*",
+    "phpunit/phpunit": "^7.3",
+    "mockery/mockery": "^1.1"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "juckknife\\PosterOss\\ServiceProvider"
+      ]
+    }
+  }
+}
