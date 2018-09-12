@@ -10,6 +10,11 @@ class Poster
 
     protected $background;
 
+    public static function getPoster()
+    {
+        return new Poster();
+    }
+
 
     /**
      * 生成海报
@@ -34,15 +39,33 @@ class Poster
         return sprintf('%s%s', $this->background->render(), $waterStyle);
     }
 
+    /**
+     * @param Watermark $watermark
+     * @return $this
+     */
     public function addEleemnt(Watermark $watermark)
     {
         array_push($this->elements, $watermark);
+
+        return $this;
     }
 
 
-    public function setBackGround(Image $background)
+    public function setBackground(Image $background)
     {
         $this->background = $background;
         return $this;
+    }
+
+    /**
+     * Handle dynamic static method calls into the method.
+     *
+     * @param  string $method
+     * @param  array $parameters
+     * @return mixed
+     */
+    public static function __callStatic($method, $parameters)
+    {
+        return (new static)->$method(...$parameters);
     }
 }

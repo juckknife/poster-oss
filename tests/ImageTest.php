@@ -41,7 +41,6 @@ class ImageTest extends TestCase
     {
         $background = new Image('http://byn-shop.oss-cn-hangzhou.aliyuncs.com/easyshop/resource/haibao01.jpg');
         $background->setResizeWidth(750);
-        $poster = new Poster($background);
 
         //头像
         $head = new Image('production/easyshop/doctor/1007/5b6d31425c411.jpg');
@@ -60,10 +59,11 @@ class ImageTest extends TestCase
         $text->setColor('FFC0CB');
         $text->setType(Text::TEXT_TYPE_FANGZHENGKAITI);
 
-        $poster->addEleemnt($head);
-        $poster->addEleemnt($text);
-
-        $url = $poster->generate();
+        $url = Poster::getPoster()
+            ->setBackground($background)
+            ->addEleemnt($head)
+            ->addEleemnt($text)
+            ->generate();
 
         var_dump($url);
 
