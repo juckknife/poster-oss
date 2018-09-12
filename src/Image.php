@@ -75,7 +75,6 @@ class Image extends Watermark
     {
 
         if ($this->getObject()){
-            var_dump($this->render());
             $waterStyle = '/watermark,image_' . $this->url_safe_base64_encode($this->render());
         } else {
             throw new InvalidArgumentException('has no object!');

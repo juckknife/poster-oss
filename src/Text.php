@@ -178,7 +178,6 @@ class Text extends Watermark
             $currentRow++;
         }
 
-        var_dump($waterStyle);
         return $waterStyle;
     }
 

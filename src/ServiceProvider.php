@@ -17,6 +17,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
     public function provides()
     {
-        return [Poster::class, 'weather'];
+        return [Poster::class, 'poster'];
     }
 }

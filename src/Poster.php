@@ -4,6 +4,7 @@ namespace juckknife\PosterOss;
 
 class Poster
 {
+
     protected $elements = [];
 
 
@@ -30,8 +31,6 @@ class Poster
 
         $this->background->resize();
 
-        var_dump($waterStyle);
-
         return sprintf('%s%s', $this->background->render(), $waterStyle);
     }
 
@@ -44,5 +43,6 @@ class Poster
     public function setBackGround(Image $background)
     {
         $this->background = $background;
+        return $this;
     }
 }
