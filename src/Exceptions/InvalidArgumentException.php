@@ -1,6 +1,6 @@
 <?php
 
-namespace Juckknife\PosterOss\Exception;
+namespace Juckknife\PosterOss\Exceptions;
 
 use Exception;
 
