@@ -74,7 +74,7 @@ class Image extends Watermark
     public function watermarkStyles()
     {
 
-        if ($this->getObject()){
+        if ($this->getObject()) {
             $waterStyle = '/watermark,image_' . $this->url_safe_base64_encode($this->render());
         } else {
             throw new InvalidArgumentException('has no object!');
@@ -87,13 +87,13 @@ class Image extends Watermark
             $waterStyle .= sprintf(',g_%s', $g);
         }
 
-        if ($x = $this->getX()) {
+        if ($x = $this->getX() >= 0) {
             if (in_array($g, [Watermark::G_NE, Watermark::G_SE, Watermark::G_NW, Watermark::G_SW, Watermark::G_WEST, Watermark::G_EAST])) {
                 $waterStyle .= sprintf(',x_%s', $x);
             }
         }
 
-        if ($y = $this->getY()) {
+        if ($y = $this->getY() >= 0) {
             if (in_array($g, [Watermark::G_NE, Watermark::G_SE, Watermark::G_NW, Watermark::G_SW, Watermark::G_NORTH, Watermark::G_SOUTH])) {
                 $waterStyle .= sprintf(',y_%s', $y);
             }
