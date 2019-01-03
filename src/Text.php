@@ -146,13 +146,15 @@ class Text extends Watermark
                 $waterStyle .= sprintf(',g_%s', $g);
             }
 
-            if ($x = $this->getX() >= 0) {
+            $x = $this->getX();
+
+            if ($x >= 0) {
                 if (in_array($g, [Watermark::G_NE, Watermark::G_SE, Watermark::G_NW, Watermark::G_SW, Watermark::G_WEST, Watermark::G_EAST])) {
                     $waterStyle .= sprintf(',x_%s', $x);
                 }
             }
-
-            if ($y = $this->getY() >= 0) {
+            $y = $this->getY();
+            if ($y >= 0) {
                 $y -= ($this->getSize() + $this->getRowHeight()) * ($currentRow - 1);
                 if (in_array($g, [Watermark::G_NE, Watermark::G_SE, Watermark::G_NW, Watermark::G_SW, Watermark::G_NORTH, Watermark::G_SOUTH])) {
                     $waterStyle .= sprintf(',y_%s', $y);
