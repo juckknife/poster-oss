@@ -9,7 +9,7 @@
 namespace juckknife\PosterOss;
 
 
-use Juckknife\PosterOss\Exception\InvalidArgumentException;
+use Juckknife\PosterOss\Exceptions\InvalidArgumentException;
 
 class Image extends Watermark
 {
