@@ -83,9 +83,9 @@ class Text extends Watermark
     public function watermarkStyles()
     {
 
-        if (!$text = $this->getObject()) {
-            throw new InvalidArgumentException('has no object!');
-        }
+//         if (!$text = $this->getObject()) {
+//             throw new InvalidArgumentException('has no object!');
+//         }
 
         $waterStyle = '';
 
